@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Patua+One&display=swap');
+/* CORE STYLES */
+:root {
+    --primary-color: rgba(13, 110, 139, 1);
+    /* --overlay-color: rgba(24, 39, 51 , 0.85); */
+     --overlay-color: rgba(24, 39, 51 , 1);
+    --menu-speed: 0.75s;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+.navbar{
+    height: 55px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+   /* /////hamburger sign///*/
+     /* MENU STYLES */
+     
+.menu-wrap {
+         position: fixed;
+         top: 0;
+         right: 0;
+         z-index: 1;
+       }
+       
+.menu-wrap .toggler {
+         position: absolute;
+         top: 20px;
+         right: 0;
+         z-index: 2;
+         cursor: pointer;
+         width: 50px;
+         height: 50px;
+         opacity: 0;
+       }
+       
+.menu-wrap .hamburger {
+         position: absolute;
+         top: 7px;
+         right: 10px;
+         z-index: 1;
+         width: 65px;
+         height: 40px;
+         padding: 1rem;
+         background: var(--primary-color);
+         background-color: black;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+       }
+       
+       /* Hamburger Line */
+       
+.menu-wrap .hamburger > div {
+         position: relative;
+         flex: none;
+         width: 100%;
+         height: 2px;
+         background: white;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: all 0.4s ease;
+       }
+       
+       /* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+         content: '';
+         position: absolute;
+         z-index: 1;
+         top: -10px;
+         width: 100%;
+         height: 2px;
+         background: inherit;
+       }
+       
+       /* Moves Line Down */
+.menu-wrap .hamburger > div::after {
+         top: 10px;
+       }
+       
+       /* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+         transform: rotate(135deg);
+       }
+       
+       /* Turns Lines Into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+         top: 0;
+         transform: rotate(90deg);
+       }
+       
+       /* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+         transform: rotate(225deg);
+       }
+       
+       /* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+         visibility: visible;
+       }
+       
+.menu-wrap .toggler:checked ~ .menu > div {
+         transform: scale(1);
+         transition-duration: var(--menu-speed);
+       }
+       
+.menu-wrap .toggler:checked ~ .menu > div > div {
+         opacity: 1;
+         transition:  opacity 0.4s ease 0.4s;
+       }
+       
+.menu-wrap .menu {
+         position: fixed;
+         top: 0;
+         right: 0;
+         width: 100%;
+         height: 100%;
+         visibility: hidden;
+         overflow: hidden;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+       }
+       
+ .menu-wrap .menu > div {
+         background: var(--overlay-color);
+         border-radius: 50%;
+         width: 200vw;
+         height: 200vw;
+         display: flex;
+         flex: none;
+         align-items: center;
+         justify-content: center;
+         transform: scale(0);
+         transition: all 0.4s ease;
+       }
+       
+.menu-wrap .menu > div > div {
+         text-align: center;
+         max-width: 90vw;
+         max-height: 100vh;
+         opacity: 0;
+         transition: opacity 0.4s ease;
+       }
+       
+.menu-wrap .menu > div > div > ul > li {
+         list-style: none;
+         font-family: 'Patua One', cursive;
+         color: white;
+         font-size: 1.5rem;
+         letter-spacing: 1.5px;
+         padding: 1rem;
+       }
+
+.menu-wrap .menu > div > div > ul > li:hover {
+            font-size: 1.8rem;
+            color: rgb(46, 149, 180);
+            font-weight: bolder;
+            transition: ease-in-out 0.5s;
+       }
+       
+ .menu-wrap .menu > div > div > ul > li > a {
+         color: inherit;
+         text-decoration: none;
+         
+       }
+html {
+        position: relative;
+        min-height: 100%;
+      }
+body {
+        margin-bottom: 60px; /* Margin bottom by footer height */
+      }
+.footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 45px; /* Set the fixed height of the footer here */
+        line-height: 45px; /* Vertically center the text there */
+        background-color:rgba(32, 32, 32, 1);
+        color: white;
+        z-index: 10;
+        position: fixed;
+      }
+.footer .container 
+{
+        width: auto;
+        max-width: 680px;
+        padding: 0 10px;
+        text-align: center;
+        color: white;
+        font-family: 'Cookie', cursive;
+        font-size: 25px;
+}
+
+.containerlogin
+{
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  background-image: url(../images/b4.jpg);
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 60px;
+  padding-top: 10vh;
+  
+}
+
+#tbleadnvu
+{
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+#bkingbg
+{
+  background-image: none;
+  background-color: rgba(33, 56, 185, 0.637);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#subheading
+{
+  color: white;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+#frmlgin
+{
+  font-size: 20px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+}
+
+#btnlgin
+{
+  width: 165px;
+  height: 50px;
+  margin-top: 10px;
+  background-color: rgb(47, 157, 190);
+  border: none;
+}
+
+#btnlgin:hover
+{
+  background-color: rgb(30, 132, 163);
+}
+
+.signinpart h5
+{
+  font-size: 28px;
+}
+
+#sgnlnk, #lglnk
+{
+  text-decoration: none;
+  color: rgb(47, 157, 190);
+}
+
+#sgnlnk:hover, #lglnk:hover
+{
+  color: rgb(30, 132, 163);
+  cursor: pointer;
+}
+
+
+#ermgs
+{
+  text-align: center;
+  margin-top: 5px;
+  color: red;
+}
+
+#prfo
+{
+  background-image: url(../images/b2.jpg);
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 10px;
+}
+
+#pfleurr
+{
+  background-color: rgba(99, 97, 97, 0.938);
+  color: white;
+  padding: 15px;
+  height: auto;
+  min-width: 95%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 2vh;
+  overflow-x: scroll;
+}
+
+#pfleurr::-webkit-scrollbar
+{
+  width: 0;
+}
+
+#btnprof1, #btnprof2, #btnprof3, #btnprof4
+{
+  width: 45%;
+  height: 55px;
+  margin-top: 15px;
+  background-color: rgb(47, 157, 190);
+  border: none;
+  margin-left: 10px;
+}
+
+#btnprof1:hover, #btnprof2:hover, #btnprof3:hover, #btnprof4:hover
+{
+  background-color: rgb(30, 132, 163);
+  cursor: pointer;
+}
+
+#avater
+{
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+
+#cmplnbd
+{
+  height: 75px;
+}
+
+/* design for add booking page */
+#subdivone, #subdivtwo{
+  min-height: 50vh;
+  margin-top: 30px;
+}
+.card{
+	margin-top: 30px;
+  width: 40%;
+}
+.card-img-top{
+  height: 20rem;
+
+}
+
+#btnjrny
+{
+  margin-left: 10px;
+  margin-bottom: 25px;
+  height: 55px;
+}
+
+#mycanvas
+{
+  width: 80%;
+  height: 450px;
+  background-color: rgb(182, 201, 201);
+  border-radius: 10px;
+}
+
+#mycanvas iframe
+{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* design for chkhealth */
+
+#pdfbtnhld
+{
+  margin-top: 15vh;
+}
+
+#containerhealthparam
+{
+  margin-top: 4vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10vh;
+}
+
+#wrapperhealth
+{
+  min-height: 50vh;
+  background-color: rgb(86, 101, 185); 
+  margin-top: 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+
+#wrapperhealth h4
+{
+  color: white;
+}
+
+#wrapperhealth table
+{
+  color: white;
+  text-align: center;
+}
+/* design for chkhealth ends*/
+
+
+/* design for home page */
+
+.containerimage{
+  width: 100%;
+  height: 60vh;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/b3.jpg');
+  position: center;
+  background-size: cover;
+
+}
+.rows h1 {
+  
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  word-spacing: 3px;
+  font-weight: bolder;
+}
+.rows p{
+  color: white;
+  text-transform: uppercase;
+  font-family:sans-serif;
+  word-spacing: 3px;
+}
+
+#homeimg
+{
+  width: 450px;
+  height: 350px;
+}
+.moreaboutus{
+  font-family: cursive;
+}
+.lead{
+  font-family: monospace;
+}
+.containers{
+background-color:  rgb(86, 101, 185); 
+background-size: cover;
+width:100%; 
+padding-top: 50px;
+padding-bottom: 100px;
+overflow-x: hidden;
+
+}
+
+#lastpart p
+{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+#lastpart h3{
+font-family:Georgia, 'Times New Roman', Times, serif;
+color: white;
+
+}
+#lastpart h4{
+font-family: monospace;
+font-weight: normal;
+color: white;
+}
+#lastpart p{
+  font-family: monospace;
+  color: white;
+}
+#lastpart #flexinglast
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#texthome
+{
+  text-align: justify;
+}
+
+@media only screen and (max-width: 330px)
+{
+  .rows h1{
+    padding-top: 75%;
+  }
+  .rows p{
+    font-size: 100%;
+  }
+  #lastpart h3{
+    margin-left: 0.5px;
+    padding-left: 0.1px;
+    padding-right: 25%; 
+    font-size: 150%;
+    padding-bottom: 20px;
+  }
+
+}
+
+
+@media only screen and (max-width: 700px)
+{
+  #btnprof1, #btnprof2, #btnprof3, #btnprof4
+  {
+    width: 70%;
+  }
+
+  .card
+  {
+    width: 75%;
+  }
+}
+
+
+@media only screen and (max-width: 420px)
+{
+  .card
+  {
+    width: 90%;
+  }
+}
